@@ -6,6 +6,8 @@ const app = express()
 
 app.use(express.json())
 
+app.use(express.static('dist'))
+
 app.use(morgan(function (tokens, req, res) {
     if (tokens.method(req, res) !== "POST") {
         return [
